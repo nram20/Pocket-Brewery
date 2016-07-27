@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row" style="margin-top:30px">
-    <button class="btn btn-primary" ng-click="startreview()">Start Reviewing Beers!</button>
+    <button class="btn btn-primary" ng-click="vm.startreview()">Start Reviewing Beers!</button>
   </div>
   <div class="row" style="margin-top:10px">
     <h4>
@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="list-group">
-      <a class="list-group-item" ng-repeat="beer in notSampled" ng-click="reviewThis(beer.beerId)">{{ beer.beerName }}<span class="badge">I want to review this</span></a>
+      <a class="list-group-item" ng-repeat="beer in vm.notSampled" ng-click="vm.reviewThis(beer.beerId)">{{ beer.beerName }}<span class="badge">I want to review this</span></a>
     </div>
   </div>
 </div>

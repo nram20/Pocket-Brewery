@@ -76,10 +76,10 @@ gulp.task('js', ['clean:js'], function() {
   return gulp.src(paths.js.input)
     .pipe(plumber())
     .pipe(sourcemaps.init())    
-      .pipe(concat('bundle.js'))
       .pipe(babel({
         presets: ['es2015']
       }))
+      .pipe(concat('bundle.js'))
       .pipe(ngAnnotate())
       .pipe(uglify())
     .pipe(sourcemaps.write())

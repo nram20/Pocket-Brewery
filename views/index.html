@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Midterm</title>
+  <title>Pocket Brewery</title>
 
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
   <script src="/js/bundle.js"></script>
 
 </head>
-<body ng-app="beerApp" ng-controller="mainCtrl">
+<body ng-app="beerApp" ng-controller="mainCtrl as vm">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 noBorPad">
@@ -27,14 +27,14 @@
           <div class="row">
             <div class="col-xs-6">
               <a ui-sref="home" class="topBarLogo">BEER LOG</a>
-              <a class="topBarLink" ng-if="isLoggedIn" ui-sref="allBeers">Beer review</a>
-              <a class="topBarLink" ng-if="isLoggedIn" ui-sref="myBeers">My beers</a>
-              <a class="topBarLink" ng-if="isLoggedIn" ui-sref="profile">My Profile</a>
+              <a class="topBarLink" ng-if="vm.isLoggedIn" ui-sref="allBeers">Beer review</a>
+              <a class="topBarLink" ng-if="vm.isLoggedIn" ui-sref="myBeers">My beers</a>
+              <a class="topBarLink" ng-if="vm.isLoggedIn" ui-sref="profile">My Profile</a>
             </div>
             <div class="col-xs-6 text-right">
-              <a ng-if="!isLoggedIn" class="topBarButton logIn" ui-sref="login">LOG IN</a>
-              <a ng-if="!isLoggedIn" class="topBarButton register" ui-sref="register">REGISTER</a>
-              <a ng-if="isLoggedIn" class="topBarButton logIn" ng-click="logOut()">Log Out</a>
+              <a ng-if="!vm.isLoggedIn" class="topBarButton logIn" ui-sref="login">LOG IN</a>
+              <a ng-if="!vm.isLoggedIn" class="topBarButton register" ui-sref="register">REGISTER</a>
+              <a ng-if="vm.isLoggedIn" class="topBarButton logIn" ng-click="vm.logOut()">Log Out</a>
             </div>
           </div>
         </div>
